@@ -10,10 +10,14 @@ el-card.card(
       .cardTitle {{ item.title }}
       .cardPrice ${{ item.price }}
     div
-      el-button(
-        type="primary"
-        @click="$emit('addToCart')"
-      ) {{ $t('VtProductItem.addToCart') }}
+      el-badge(
+        :value="quantity"
+        :hidden="!quantity"
+      )
+        el-button(
+          type="primary"
+          @click="$emit('addToCart')"
+        ) {{ $t('VtProductItem.addToCart') }}
 </template>
 
 <style lang="scss" src="./VtProductItem.scss" scoped></style>
