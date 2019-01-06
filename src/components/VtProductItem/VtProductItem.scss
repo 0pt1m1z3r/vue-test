@@ -1,0 +1,25 @@
+.card {
+  width: 300px;
+
+  /deep/ .el-card__body {
+    padding: 0;
+  }
+}
+.cardImage {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: 300px;
+}
+.cardFoot {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+.cardPrice {
+  margin-top: 4px;
+}

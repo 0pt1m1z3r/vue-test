@@ -1,0 +1,13 @@
+.protuctsList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  min-height: 380px;
+}
+.protuctItem {
+  margin: 0 10px 20px;
+}
+
+.error {
+  text-align: center;
+}

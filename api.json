@@ -1,0 +1,129 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Vue test"
+  },
+  "host": "my-json-server.typicode.com",
+  "basePath": "/0pt1m1z3r/vue-test",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/products": {
+      "get": {
+        "summary": "Get list of products",
+        "operationId": "getProductsList",
+        "tags": [
+          "products"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Product"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order": {
+      "post": {
+        "summary": "Order items in cart",
+        "operationId": "order",
+        "tags": [
+          "order"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderItems"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Incorrect input data"
+          },
+          "404": {
+            "description": "Some products not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "image",
+        "price"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number",
+          "format": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderItems": {
+      "type": "object",
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderItem"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderItem": {
+      "type": "object",
+      "required": [
+        "productId",
+        "quantity",
+        "addtime"
+      ],
+      "properties": {
+        "productId": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "addtime": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Add time in unixtime"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

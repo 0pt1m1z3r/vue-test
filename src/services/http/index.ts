@@ -1,0 +1,5 @@
+export * from './HttpService'
+export * from './IHttpPromise'
+export * from './IHttpRequestConfig'
+export * from './IHttpResponse'
+export * from './IHttpService'
