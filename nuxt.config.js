@@ -1,5 +1,9 @@
 import webpack from 'webpack'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  base: '/vue-test/'
+} : {}
+
 export default {
   head: {
     title: 'VueTest',
@@ -60,6 +64,7 @@ export default {
     ]
   },
   router: {
-    middleware: ['i18n']
+    middleware: ['i18n'],
+    ...routerBase
   }
 }

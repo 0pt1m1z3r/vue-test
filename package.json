@@ -7,7 +7,9 @@
   "license": "ISC",
   "scripts": {
     "dev": "nuxt",
-    "swagger": "node ./scripts/swagger/index.js"
+    "swagger": "node ./scripts/swagger/index.js",
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "engines": {
     "node": ">=8.0.0",
@@ -37,6 +39,7 @@
     "json-schema-to-typescript": "^6.1.0",
     "lodash": "^4.17.11",
     "mkdirp": "^0.5.1",
+    "push-dir": "^0.4.1",
     "rimraf": "^2.6.3",
     "tslint": "^5.12.0",
     "tslint-config-security": "^1.14.0",
