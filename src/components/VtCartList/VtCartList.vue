@@ -1,6 +1,7 @@
 <template lang="pug">
 el-table(
   :data="itemsOrdered"
+  :empty-text="$t('VtCartList.empty')"
   :summary-method="getSummaries"
   show-summary
 )

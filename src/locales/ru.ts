@@ -20,5 +20,8 @@ export default {
   },
   VtProductItem: {
     addToCart: 'В корзину'
+  },
+  VtCartList: {
+    empty: 'Корзина пуста'
   }
 }
