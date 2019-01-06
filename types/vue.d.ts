@@ -6,7 +6,6 @@ declare module "vue/types/options" {
     head?: MetaInfo | (() => MetaInfo)
     layout?: string
     middleware?: string[]
-    uniqId?: number
   }
 }
 
@@ -15,6 +14,5 @@ declare module "vue/types/vue" {
     head?: MetaInfo | (() => MetaInfo)
     layout?: string
     middleware?: string[]
-    uniqId?: number
   }
 }
