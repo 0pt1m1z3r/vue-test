@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "nuxt",
     "swagger": "node ./scripts/swagger/index.js",
-    "generate": "nuxt generate",
+    "generate": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "engines": {
