@@ -12,16 +12,14 @@ export class OrderService implements IOrderService {
     @Inject(ApiServiceToken) private apiService: IApiService
   ) {}
 
+  // оформление заказа
   async order (items: ICartStoreItem[]): Promise<void> {
-    try {
-      const orderItems: OrderItem[] = items.map((item) => ({
-        productId: item.product.id,
-        quantity: item.quantity,
-        addtime: item.addtime
-      }))
-      await this.apiService.order({ body: { items: orderItems } })
-    } catch (e) {
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-    }
+    // формируем данные в нужном формате
+    const orderItems: OrderItem[] = items.map((item) => ({
+      productId: item.product.id,
+      quantity: item.quantity,
+      addtime: item.addtime
+    }))
+    await this.apiService.order({ body: { items: orderItems } })
   }
 }

@@ -71,7 +71,7 @@ export class ApiService implements IApiService {
 
     protected request(url: string, method: string, headers: any, params: any, data: any, externalConfig?: IHttpRequestConfig) {
         return this.http.request(Object.assign(
-            { baseURL: 'https://petstore.swagger.io/' },
+            { baseURL: 'https://my-json-server.typicode.com/0pt1m1z3r/vue-test' },
             externalConfig,
             { url, method, headers, params, data }
         ))
