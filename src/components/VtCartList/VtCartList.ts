@@ -18,6 +18,10 @@ export default class VtCartList extends Vue {
   @Prop({ type: Number, default: 0 })
   totalPrice!: number
 
+  get itemsOrdered (): ICartStoreItem[] {
+    return this.items.sort((a, b) => b.addtime - a.addtime)
+  }
+
   itemPriceTotal (item: ICartStoreItem): number {
     return this.roundService.round(item.product.price * item.quantity, -2)
   }

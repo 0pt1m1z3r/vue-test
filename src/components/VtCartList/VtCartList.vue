@@ -1,6 +1,6 @@
 <template lang="pug">
 el-table(
-  :data="items"
+  :data="itemsOrdered"
   :summary-method="getSummaries"
   show-summary
 )

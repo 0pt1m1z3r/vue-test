@@ -2,7 +2,6 @@
   "name": "vue-test",
   "version": "1.0.0",
   "description": "",
-  "private": true,
   "author": "Dmitri Efimenko <ezheg89@gmail.com>",
   "license": "ISC",
   "scripts": {
